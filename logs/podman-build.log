@@ -1,0 +1,24 @@
+[1/2] STEP 1/6: FROM docker.io/golang:1.20-alpine AS build
+[1/2] STEP 2/6: WORKDIR /app
+--> 21aa4afa979e
+[1/2] STEP 3/6: COPY go.mod go.sum ./
+--> e2d951d1e573
+[1/2] STEP 4/6: RUN go mod download
+go: no module dependencies to download
+--> 6a1af8e85ea8
+[1/2] STEP 5/6: COPY *.go ./
+--> 8c801a3e207c
+[1/2] STEP 6/6: RUN go build -o moviecollectionclient
+--> 2b828903bce9
+[2/2] STEP 1/5: FROM docker.io/alpine:latest
+[2/2] STEP 2/5: COPY --from=build /app/moviecollectionclient /app/moviecollectionclient
+--> 2003fcd2a8dc
+[2/2] STEP 3/5: WORKDIR /app
+--> e7019f89fbe4
+[2/2] STEP 4/5: EXPOSE 8080
+--> b7e0f3902104
+[2/2] STEP 5/5: CMD ["./moviecollectionclient"]
+[2/2] COMMIT moria.middle.earth:443/trip/moviecollectionclient:0.1
+--> 6fb3bd449db8
+Successfully tagged moria.middle.earth:443/trip/moviecollectionclient:0.1
+6fb3bd449db8b6fc6645d82e638bbc1d346294e11cb3d8f5dd55d0e8ff83dc0e

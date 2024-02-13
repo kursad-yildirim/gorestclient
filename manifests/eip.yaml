@@ -1,0 +1,12 @@
+apiVersion: k8s.ovn.org/v1
+kind: EgressIP
+metadata:
+  name: trip
+  labels:
+     app: moviecollectionclient
+spec:
+  egressIPs:
+  - 10.140.239.251
+  namespaceSelector:
+    matchLabels:
+      developer: trip

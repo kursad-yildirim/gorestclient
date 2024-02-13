@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: restclient
+  namespace: trip
+  labels:
+    app: restclient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restclient
+  template:
+    metadata:
+       labels:
+         app: restclient
+    spec:
+      containers:
+        - name: restclient
+          image: image-registry.openshift-image-registry.svc.cluster.local:5000/trip/restclient:0.3
+ 

@@ -1,0 +1,3 @@
+configmap/moviecollectionclient created
+deployment.apps/moviecollectionclient created
+egressip.k8s.ovn.org/trip created

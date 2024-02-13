@@ -1,0 +1,3 @@
+configmap "moviecollectionclient" deleted
+deployment.apps "moviecollectionclient" deleted
+egressip.k8s.ovn.org "trip" deleted

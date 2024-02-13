@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: moviecollectionclient
+  namespace: trip
+data:
+  TARGET: "10.140.239.241:8080"
